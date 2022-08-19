@@ -7,34 +7,35 @@
 # **TASK 2: selectors**
 
 ### login_field_xpath 
-> - or *//*[@id='login']" 
-> - or */html/body/div/form/div/div[1]/div[2]/div/input
-> - or *//*/div[1]/div/input
+> -  //*[@id='login']" 
+> -  /html/body/div/form/div/div[1]/div[2]/div/input
+> -  //*/div[1]/div/input
    
 ### password_field_xpath  
-> - or//*[@id='password'],
-> - or/html/body/div/form/div/div[1]/div[2]/div/input
-> - or//*/div[2]/div/input
+> - //*[@id='password'],
+> - /html/body/div/form/div/div[1]/div[2]/div/input
+> - //*/div[2]/div/input
       
 ### sign_in_button_xpath  
-> - or //*[@id ='__next']/form/div/div[2]/button/span[1],
-> - or //*/button/span,
-> - or //*[text()='Sign in'] 
+> -  //*[@id ='__next']/form/div/div[2]/button/span[1],
+> -  //*/button/span,
+> -  //*[text()='Sign in'] 
 
 ### remind_password_hyperlink_xpath 
-> - or //*[@id="__next"]/form/div/div[1]/a,
-> - or //*[text()="Remind password"],
-> - or //child::div/a
+> -  //*[@id="__next"]/form/div/div[1]/a,
+> -  //*[text()="Remind password"],
+> -  //child::div/a
 
 ### language_selection_xpath  
-> - or //*[@id="__next"]/form/div/div[2]/div/div,
-> - or //*/div[2]/div/div
-> - or //*[contains(@class,'MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input')]
+> -  //*[@id="__next"]/form/div/div[2]/div/div,
+> -  //*/div[2]/div/div
+> -  //*[contains(@class,'MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input')]
 
 ### Scouts_Panel_form_tittle_xparh =
-> - or //*/div[1]/h5,
-> - or //*[text()='Scouts Panel']
-> - or //*[@id="__next"]/form/div/div[1]/h5 
+> -  //*/div[1]/h5,
+> -  //*[text()='Scouts Panel']
+> -  //*[@id="__next"]/form/div/div[1]/h5 
+
 
    
    
