@@ -4,11 +4,13 @@ from pages.base_page import BasePage
 class LoginPage(BasePage):
     login_field_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
-    sign_in_button_xpath = "// *[text()= 'Sign in']"
+    sign_in_button_xpath = "//*[text()= 'Sign in']"
     login_url = 'https://scouts-test.futbolkolektyw.pl/en'
     expected_title = 'Scouts panel - sign in'
     title_of_box_xpath = "//*/div/div[1]/h5"
     header_of_box = 'Scouts Panel'
+    validation_massage_xpath = "//*/div/div[1]/div[3]/span"
+    text_of_validation_massage = 'Identifier or password invalid.'
 
 
     def type_in_email(self, email):
@@ -24,4 +26,13 @@ class LoginPage(BasePage):
         assert self.get_page_title(self.login_url) == self.expected_title
 
     def check_title_of_header(self):
-        self.assert_element_text(self.driver, self.title_of_box_xpath, self.header_of_box)
+        self.assert_element_text(self.title_of_box_xpath, self.header_of_box)
+
+    def check_validation_message(self):
+        self.wait_for_element_to_be_clickable(self.login_field_xpath)
+        self.assert_element_text(self.validation_massage_xpath, self.text_of_validation_massage)
+
+
+
+
+

@@ -31,10 +31,7 @@ class TestMediumDfedotov(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def check_page_title(self):
-         actual_title = self.get_page_title('https://medium.com/')
-         expected_title = 'Medium – Where good ideas find you.'
-         assert actual_title == expected_title
+
 
     def get_page_title(self, url):
         self.driver.get(url)
