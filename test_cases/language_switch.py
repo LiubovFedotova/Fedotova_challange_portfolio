@@ -21,14 +21,14 @@ class TestLanguageSwitch(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_add_player_to_database(self):
+    def test_language_switch(self):
         user_login = LoginPage(self.driver)
         user_login.type_in_email('user01@getnada.com')
         user_login.type_in_password('Test-1234')
         user_login.click_on_the_sign_in_button()
+        time.sleep(4)
         dashboard_page = Dashboard(self.driver)
         dashboard_page.click_on_the_language_button()
-        time.sleep(4)
 
     @classmethod
     def tearDown(self):

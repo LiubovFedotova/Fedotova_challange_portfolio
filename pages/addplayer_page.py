@@ -9,6 +9,8 @@ class AddPlayer(BasePage):
     submit_button_xpath = "// *[text()= 'Submit']"
     new_player_button_xpath = "//ul[2]/div[1]"
     clear_button_xpath = "// *[text()= 'Clear']"
+    expected_title_of_add_page = 'Add player'
+    add_page_url = 'https://scouts-test.futbolkolektyw.pl/en/players/add'
 
 
     def type_in_name(self, name):
@@ -31,6 +33,11 @@ class AddPlayer(BasePage):
     def click_on_the_clear_button(self):
         self.wait_for_element_to_be_clickable(self.submit_button_xpath)
         self.click_on_the_element(self.clear_button_xpath)
+
+    def title_of_add_page(self):
+        assert self.get_page_title(self.add_page_url) == self.expected_title_of_add_page
+
+
 
 
 

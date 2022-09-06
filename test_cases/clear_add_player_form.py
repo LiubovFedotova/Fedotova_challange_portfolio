@@ -21,7 +21,7 @@ class TestClearAddPlayerForm(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_add_player_to_database(self):
+    def test_clear_add_player_form(self):
         user_login = LoginPage(self.driver)
         user_login.type_in_email('user01@getnada.com')
         user_login.type_in_password('Test-1234')
@@ -34,10 +34,11 @@ class TestClearAddPlayerForm(unittest.TestCase):
         addplayer_page.type_in_age('01.01.2001')
         addplayer_page.type_in_mainPosition('test')
         addplayer_page.click_on_the_clear_button()
+        addplayer_page.title_of_add_page()
+
 
 
     @classmethod
     def tearDown(self):
         self.driver.quit()
-
 

@@ -12,7 +12,6 @@ class LoginPage(BasePage):
     validation_massage_xpath = "//*/div/div[1]/div[3]/span"
     text_of_validation_massage = 'Identifier or password invalid.'
 
-
     def type_in_email(self, email):
         self.field_send_keys(self.login_field_xpath, email)
 

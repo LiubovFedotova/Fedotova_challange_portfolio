@@ -26,6 +26,8 @@ class TestLogout(unittest.TestCase):
         dashboard_page = Dashboard(self.driver)
         dashboard_page.click_on_the_sign_out_button()
         time.sleep(3)
+        user_login.title_of_page()
+
 
 
     @classmethod

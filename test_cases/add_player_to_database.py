@@ -34,6 +34,8 @@ class TestAddPlayer(unittest.TestCase):
         addplayer_page.type_in_age('01.01.2001')
         addplayer_page.type_in_mainPosition('test')
         addplayer_page.click_on_the_submit_button()
+        editplayer_page = EditPlayer(self.driver)
+        editplayer_page.title_of_edit_page()
 
 
     @classmethod

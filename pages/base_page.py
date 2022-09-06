@@ -43,9 +43,9 @@ class BasePage():
         element = wait.until(EC.url_changes(url_change))
         time.sleep(7)
 
-   # def wait_for_visibility_of_element_located(self, selector, selector_type=By.XPATH):
-   #     wait = WebDriverWait(self.driver, 5)
-   #     element = wait.until(EC.visibility_of_element_located(selector_type, selector)
+
+
+
 
 
 
