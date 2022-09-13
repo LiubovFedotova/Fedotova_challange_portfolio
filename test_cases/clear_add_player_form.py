@@ -17,7 +17,7 @@ class TestClearAddPlayerForm(unittest.TestCase):
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
@@ -29,14 +29,25 @@ class TestClearAddPlayerForm(unittest.TestCase):
         dashboard_page = Dashboard(self.driver)
         dashboard_page.click_on_the_add_player_button()
         addplayer_page = AddPlayer(self.driver)
+        addplayer_page.type_in_email('test@gmail.com')
         addplayer_page.type_in_name('Test')
         addplayer_page.type_in_surname('Test')
+        addplayer_page.type_in_phone('111111111')
+        addplayer_page.type_in_weight('100')
+        addplayer_page.type_in_height('190')
         addplayer_page.type_in_age('01.01.2001')
+        addplayer_page.click_on_leg()
+        addplayer_page.type_in_club('test')
+        addplayer_page.type_in_level('test')
         addplayer_page.type_in_mainPosition('test')
+        addplayer_page.type_in_secondPosition('test')
+        addplayer_page.click_on_district()
+        addplayer_page.type_in_achievements('test')
+        addplayer_page.type_in_laczy_nas_pilka('test')
+        addplayer_page.type_in_ninety_minut('test')
+        addplayer_page.type_in_facebook('test')
         addplayer_page.click_on_the_clear_button()
         addplayer_page.title_of_add_page()
-
-
 
     @classmethod
     def tearDown(self):

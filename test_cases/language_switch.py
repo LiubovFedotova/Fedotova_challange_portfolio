@@ -17,7 +17,7 @@ class TestLanguageSwitch(unittest.TestCase):
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
@@ -29,6 +29,7 @@ class TestLanguageSwitch(unittest.TestCase):
         time.sleep(4)
         dashboard_page = Dashboard(self.driver)
         dashboard_page.click_on_the_language_button()
+        dashboard_page.check_language_is_switched()
 
     @classmethod
     def tearDown(self):

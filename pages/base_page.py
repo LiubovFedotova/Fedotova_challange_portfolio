@@ -14,6 +14,10 @@ class BasePage():
         self.driver = driver
 
     def field_send_keys(self, selector, value, locator_type=By.XPATH):
+        """
+
+        :rtype: object
+        """
         return self.driver.find_element(locator_type, selector).send_keys(value)
 
     def click_on_the_element(self, selector, selector_type=By.XPATH):

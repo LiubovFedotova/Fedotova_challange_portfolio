@@ -26,7 +26,7 @@ class Dashboard(BasePage):
     sign_out_button_xpath = "//*[text()= 'Sign out']"
 
     expected_title = 'Scouts panel'
-    dashboard_url = 'https://scouts-test.futbolkolektyw.pl/en'
+    dashboard_url = 'https://scouts.futbolkolektyw.pl/en/'
     english_language_is_selected = 'Polski'
     polski_language_is_selected = 'English'
 
@@ -50,10 +50,12 @@ class Dashboard(BasePage):
     def click_on_the_language_button(self):
         self.wait_for_element_to_be_clickable(self.add_players_button_xpath)
         self.click_on_the_element(self.language_button_xpath)
+    def check_language_is_switched(self):
         if self.polski_language_is_selected:
             self.assert_element_text(self.language_button_xpath, self.polski_language_is_selected)
         else:
             self.assert_element_text(self.language_button_xpath, self.english_language_is_selected)
+        time.sleep(3)
 
 
 

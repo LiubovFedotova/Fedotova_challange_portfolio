@@ -7,12 +7,12 @@ from pages.base_page import BasePage
 
 
 class EditPlayer(BasePage):
-    edit_page_url = 'https://scouts-test.futbolkolektyw.pl/en/players/6026b48956c79737b3f3c624/edit'
+    edit_page_url = 'https://scouts.futbolkolektyw.pl/players/631aea0354a32e8fe5dd9265/edit'
     expected_title_xpath = "//main/div[2]/form/div[1]/div/span"
     expected_title = 'Edit player Test Test'
 
     def title_of_edit_page(self):
-        self.wait_url_changes('https://scouts-test.futbolkolektyw.pl/en/players/6026b48956c79737b3f3c624/edit')
+        self.wait_url_changes('https://scouts.futbolkolektyw.pl/players/631aea0354a32e8fe5dd9265/edit')
         assert self.get_page_title(self.edit_page_url) == self.expected_title
 
 
